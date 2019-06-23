@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		90B6DA1A22BE73ED0000F27A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B6DA1922BE73ED0000F27A /* AppDelegate.swift */; };
-		90B6DA1C22BE73ED0000F27A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B6DA1B22BE73ED0000F27A /* ViewController.swift */; };
+		90B6DA1C22BE73ED0000F27A /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B6DA1B22BE73ED0000F27A /* HomePageViewController.swift */; };
 		90B6DA1F22BE73ED0000F27A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B6DA1D22BE73ED0000F27A /* Main.storyboard */; };
 		90B6DA2122BE73F00000F27A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90B6DA2022BE73F00000F27A /* Assets.xcassets */; };
 		90B6DA2422BE73F00000F27A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90B6DA2222BE73F00000F27A /* LaunchScreen.storyboard */; };
+		90E552D522BFA6830057BFF3 /* InstagramData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E552D422BFA6830057BFF3 /* InstagramData.swift */; };
+		90E552DA22BFBB160057BFF3 /* TimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E552D922BFBB160057BFF3 /* TimelineTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		90B6DA1622BE73ED0000F27A /* GoodIdeasStudio-InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GoodIdeasStudio-InstagramClone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B6DA1922BE73ED0000F27A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		90B6DA1B22BE73ED0000F27A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		90B6DA1B22BE73ED0000F27A /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		90B6DA1E22BE73ED0000F27A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		90B6DA2022BE73F00000F27A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90B6DA2322BE73F00000F27A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90B6DA2522BE73F00000F27A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90E552D422BFA6830057BFF3 /* InstagramData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramData.swift; sourceTree = "<group>"; };
+		90E552D922BFBB160057BFF3 /* TimelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,40 @@
 		90B6DA1822BE73ED0000F27A /* GoodIdeasStudio-InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
+				90E552D822BFA69F0057BFF3 /* Controller */,
+				90E552D722BFA6990057BFF3 /* View */,
+				90E552D622BFA6890057BFF3 /* Model */,
 				90B6DA1922BE73ED0000F27A /* AppDelegate.swift */,
-				90B6DA1B22BE73ED0000F27A /* ViewController.swift */,
+				90B6DA1B22BE73ED0000F27A /* HomePageViewController.swift */,
 				90B6DA1D22BE73ED0000F27A /* Main.storyboard */,
 				90B6DA2022BE73F00000F27A /* Assets.xcassets */,
 				90B6DA2222BE73F00000F27A /* LaunchScreen.storyboard */,
 				90B6DA2522BE73F00000F27A /* Info.plist */,
 			);
 			path = "GoodIdeasStudio-InstagramClone";
+			sourceTree = "<group>";
+		};
+		90E552D622BFA6890057BFF3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				90E552D422BFA6830057BFF3 /* InstagramData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		90E552D722BFA6990057BFF3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				90E552D922BFBB160057BFF3 /* TimelineTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		90E552D822BFA69F0057BFF3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +165,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90B6DA1C22BE73ED0000F27A /* ViewController.swift in Sources */,
+				90E552DA22BFBB160057BFF3 /* TimelineTableViewCell.swift in Sources */,
+				90B6DA1C22BE73ED0000F27A /* HomePageViewController.swift in Sources */,
+				90E552D522BFA6830057BFF3 /* InstagramData.swift in Sources */,
 				90B6DA1A22BE73ED0000F27A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
