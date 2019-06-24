@@ -10,14 +10,14 @@ import UIKit
 
 class TimelineTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var titleLabel: UILabel!
+   
+    
     @IBOutlet weak var contentImageView: UIImageView!
-    
     @IBOutlet weak var likesLabel: UILabel!
-    
-    @IBOutlet weak var pageNameLabel: UILabel!
-    
     @IBOutlet weak var contentLabel: UILabel!
+    
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
