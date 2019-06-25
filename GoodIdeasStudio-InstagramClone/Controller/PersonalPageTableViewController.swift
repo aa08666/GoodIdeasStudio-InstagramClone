@@ -12,41 +12,93 @@ class PersonalPageTableViewController: UITableViewController {
     
     @IBOutlet weak var personalCollectionLayout: UICollectionViewFlowLayout!
     @IBOutlet weak var personalPageCollectionView: UICollectionView!
+    @IBOutlet weak var seletCellCollection: UICollectionView!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         let nib = UINib(nibName: "TimelineCollectionViewCell", bundle: nil)
         self.personalPageCollectionView.register(nib, forCellWithReuseIdentifier: "timelineCollectionCell")
         personalCollectionLayout.scrollDirection = .horizontal
-        
-
     }
-
     
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//
-//        return 0
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//
-//        return 0
-//    }
-
+    enum CollectionCellStyle: String {
+        
+        case largeCollectionCellStyle = "LargePhotoCell"
+        case smallCollectionoCellStyle = "SmallPhotoCell"
+    }
+    var cellStyle = CollectionCellStyle.largeCollectionCellStyle
+    
+    
 }
 
 extension PersonalPageTableViewController: UICollectionViewDataSource {
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        switch collectionView {
+        case personalPageCollectionView:
+            return 10
+        case seletCellCollection:
+            return 10
+        default:
+            return .min
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let identifier = "timelineCollectionCell"
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! TimelineCollectionViewCell
-        cell.timelineCollectionImageView.image = UIImage(named:StoryItemsData.StoryPhotoArray[indexPath.row])
-        return cell
+        
+//        if indexPath.section == 0 && collectionView == personalPageCollectionView {
+//            let personalPageCellID = "timelineCollectionCell"
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: personalPageCellID, for: indexPath) as! TimelineCollectionViewCell
+//            cell.timelineCollectionImageView.image = UIImage(named: StoryItemsData.StoryPhotoArray[indexPath.row])
+//            return cell
+//        }else if indexPath.section == 1 && collectionView == seletCellCollection {
+//            let largecellID = "LargePhotoCell"
+//            let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: largecellID, for: indexPath) as! LayoutLargePhotoCollectionViewCell
+//            cell1.largePhotoImageView.image = UIImage(named: IGItems.items[indexPath.row].images)
+//            return cell1
+//        }
+        
+        switch indexPath.section {
+        case 0:
+            
+            let personalPageCellID = "timelineCollectionCell"
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: personalPageCellID, for: indexPath) as! TimelineCollectionViewCell
+            cell.timelineCollectionImageView.image = UIImage(named: StoryItemsData.StoryPhotoArray[indexPath.row])
+            return cell
+            
+        case 1:
+            let smallcellID = "SmallPhotoCell"
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: smallcellID, for: indexPath) as! LayoutSmallPhotoCollectionViewCell
+            cell.smallPhotoImageView.image = UIImage(named: IGItems.items[indexPath.row].images)
+            return cell
+            
+        default:
+            let largecellID = "LargePhotoCell"
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: largecellID, for: indexPath) as! LayoutLargePhotoCollectionViewCell
+            cell.largePhotoImageView.image = UIImage(named: IGItems.items[indexPath.row].images)
+            return cell
+        }
+
+//        switch collectionView {
+//        case personalPageCollectionView:
+//            let personalPageCellID = "timelineCollectionCell"
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: personalPageCellID, for: indexPath) as! TimelineCollectionViewCell
+//            cell.timelineCollectionImageView.image = UIImage(named: StoryItemsData.StoryPhotoArray[indexPath.row])
+//            return cell
+//
+//        case seletCellCollection:
+//            let largecellID = "LargePhotoCell"
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: largecellID, for: indexPath) as! LayoutLargePhotoCollectionViewCell
+//            cell.largePhotoImageView.image = UIImage(named: IGItems.items[indexPath.row].images)
+//            return cell
+//        default:
+//            let smallcellID = "SmallPhotoCell"
+//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: smallcellID, for: indexPath) as! LayoutSmallPhotoCollectionViewCell
+//            cell.smallPhotoImageView.image = UIImage(named: IGItems.items[indexPath.row].images)
+//            return cell
+//        }
+
     }
-    
-    
 }
