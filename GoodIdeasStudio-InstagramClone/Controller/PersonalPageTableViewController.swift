@@ -48,17 +48,6 @@ extension PersonalPageTableViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-//        if indexPath.section == 0 && collectionView == personalPageCollectionView {
-//            let personalPageCellID = "timelineCollectionCell"
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: personalPageCellID, for: indexPath) as! TimelineCollectionViewCell
-//            cell.timelineCollectionImageView.image = UIImage(named: StoryItemsData.StoryPhotoArray[indexPath.row])
-//            return cell
-//        }else if indexPath.section == 1 && collectionView == seletCellCollection {
-//            let largecellID = "LargePhotoCell"
-//            let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: largecellID, for: indexPath) as! LayoutLargePhotoCollectionViewCell
-//            cell1.largePhotoImageView.image = UIImage(named: IGItems.items[indexPath.row].images)
-//            return cell1
-//        }
         
         switch indexPath.section {
         case 0:
@@ -80,25 +69,6 @@ extension PersonalPageTableViewController: UICollectionViewDataSource {
             cell.largePhotoImageView.image = UIImage(named: IGItems.items[indexPath.row].images)
             return cell
         }
-
-//        switch collectionView {
-//        case personalPageCollectionView:
-//            let personalPageCellID = "timelineCollectionCell"
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: personalPageCellID, for: indexPath) as! TimelineCollectionViewCell
-//            cell.timelineCollectionImageView.image = UIImage(named: StoryItemsData.StoryPhotoArray[indexPath.row])
-//            return cell
-//
-//        case seletCellCollection:
-//            let largecellID = "LargePhotoCell"
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: largecellID, for: indexPath) as! LayoutLargePhotoCollectionViewCell
-//            cell.largePhotoImageView.image = UIImage(named: IGItems.items[indexPath.row].images)
-//            return cell
-//        default:
-//            let smallcellID = "SmallPhotoCell"
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: smallcellID, for: indexPath) as! LayoutSmallPhotoCollectionViewCell
-//            cell.smallPhotoImageView.image = UIImage(named: IGItems.items[indexPath.row].images)
-//            return cell
-//        }
-
+        
     }
 }

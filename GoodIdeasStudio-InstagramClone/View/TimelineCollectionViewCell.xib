@@ -32,9 +32,6 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="90" height="91"/>
-            <connections>
-                <outlet property="timelineCollectionImageView" destination="uSD-px-kmd" id="ioZ-WB-Nyz"/>
-            </connections>
             <point key="canvasLocation" x="84.057971014492765" y="140.95982142857142"/>
         </collectionViewCell>
     </objects>
